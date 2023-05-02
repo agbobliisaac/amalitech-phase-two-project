@@ -30,7 +30,6 @@ let score = Number(localStorage.getItem("score"));
 
 function init() {
     const choices = ['paper', 'scissors', 'rock'];
-    let userChoice, computerChoice;
 
     buttons.forEach((curr) => {
         curr.addEventListener('click', () => {
@@ -63,7 +62,9 @@ function updateScore(value) {
 function checkWinner() {
     let scoreUpdate;
 
-    if ((userChoice === 'paper' && computerChoice === 'rock') || (pointMap.get(userChoice) > pointMap.get(computerChoice))) {
+    if ((userChoice === 'rock' && computerChoice === 'scissors') ||
+    (userChoice === 'paper' && computerChoice === 'rock') ||
+    (userChoice === 'scissors' && computerChoice === 'paper')) {
         gameResult.innerText = "you win";
         winner = userChoice;
         scoreUpdate = 1;
