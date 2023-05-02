@@ -124,9 +124,13 @@ function reset() {
 }
 
 
-window.onload = function() {
+  window.onload = function() {
     scoreLabel.innerText = localStorage.getItem("score");
 };
+
+
+//setting play again init();
+resetBtn.addEventListener('click', reset);
 
 
 init();
