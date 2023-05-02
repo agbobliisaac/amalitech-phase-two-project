@@ -123,11 +123,14 @@ function reset() {
 
 }
 
-//setting play again init();
-resetBtn.addEventListener('click', reset);
+
+window.onload = function() {
+    scoreLabel.innerText = localStorage.getItem("score");
+};
 
 
 init();
+
 
 
 
