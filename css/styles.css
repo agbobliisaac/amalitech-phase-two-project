@@ -1,3 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+:root {
+  --scissors-shadow: hsl(39, 89%, 39%);
+  --scissors-primary: hsl(40, 84%, 53%);
+  --paper-shadow: hsl(230, 89%, 52%);
+  --paper-primary: hsl(230, 89%, 65%);
+  --rock-shadow: hsl(349, 71%, 42%);
+  --rock-primary: hsl(349, 70%, 56%);
+  --lizard-shadow: hsl(261, 73%, 50%);
+  --lizard-primary: hsl(261, 72%, 63%);
+  --cyan-shadow: hsl(189, 59%, 43%);
+  --cyan-primary: hsl(189, 58%, 57%);
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+  --inset-shadow: hsl(217, 16%, 85%);
+  --bg-gradient-from: hsl(214, 47%, 23%);
+  --bg-gradient-to: hsl(237, 49%, 15%);
+}
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +25,8 @@
 }
 
 body {
-    background: #141539;
-    background-image: linear-gradient( #1F3756, #141539);
+    background: var(--bg-gradient-to);
+    background: radial-gradient(var(--bg-gradient-from), var(--bg-gradient-to));
     background-attachment: fixed;
     background-repeat: no-repeat;
     font-family: 'Barlow Semi Condensed', sans-serif;
@@ -25,7 +45,7 @@ body {
 .score-panel {
     grid-column: 4/10;
     margin-top: 5%;
-    border: 3px solid #606E85;
+    border: 3px solid var(--header-outline);
     border-radius: 8px;
     background: inherit;
     padding: 1%;
@@ -34,7 +54,6 @@ body {
     justify-content: space-between;
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
-
 .score-title {
     text-align: left;
     margin: 5px 0 5px 10px;
@@ -59,24 +78,22 @@ body {
 .score-label {
     font-size: 12px;
     text-transform: uppercase;
-    color: #2A46C0;
+    color: var(--score-text);
 }
 
 .score-value h1 {
     font-size: 48px;
-    color: #3b4363;
+    color: var(--dark-text);
 }
-
 .game-options {
     min-height: 400px;
-    background: url(../images/bg-triangle.svg) center no-repeat content-box;
+    background: url("../images/bg-triangle.svg") no-repeat center center;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
     transition: all 0.3s;
     padding: 10px;
 }
-
 .game-options.active {
     background: inherit;
     opacity: 0;
@@ -98,7 +115,6 @@ body {
     background: linear-gradient(#de3f5c, #da2f4e) !important;
     box-shadow: inset -2px -10px 2px 2px rgba(0, 0, 0, .25);
 }
-
 #paper,
 #scissors,
 #rock {
@@ -349,6 +365,146 @@ span {
 
 .attribution a {
     color: #de3f5c;
+}
+
+
+/* -------------------Media Queries---------------------------*/
+
+@media only screen and (max-width:575px) {
+    .score-panel {
+        grid-column: 2/12;
+    }
+    .score-title h1 {
+        font-size: 30px;
+    }
+    .scoreboard {
+        flex-basis: 80px;
+    }
+    .game-options {
+        grid-column: 1/13;
+        grid-row: 2;
+        background-size: 70%;
+        margin-top: 40px;
+    }
+    #paper,
+    #scissors,
+    #rock {
+        width: 110px;
+        height: 110px;
+        grid-column: 2;
+    }
+    #paper {
+        transform: translate(15px, 50px);
+    }
+    #scissors {
+        grid-column: 4;
+        transform: translate(-35px, 50px);
+    }
+    #rock {
+        transform: translateX(-10px);
+        grid-column: 3;
+        grid-row: 2;
+    }
+    #paper:active {
+        transform: scale(0.9) translate(15px, 50px)!important;
+    }
+    #scissors:active {
+        transform: scale(0.9) translate(-35px, 50px)!important;
+    }
+    #rock:active {
+        transform: scale(0.9) translate(-10px) !important
+    }
+    span {
+        transform: translate(13px, 13px);
+    }
+    span img {
+        width: 70%;
+        transform: translate(7px, 7px);
+    }
+    .result-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        grid-column: 1/13;
+        grid-row: 2;
+        flex-wrap: wrap;
+        padding: 5px;
+        z-index: 2;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .result-container.load {
+        justify-content: space-evenly;
+        margin-top: 50px;
+    }
+    #player,
+    #computer {
+        width: 120px;
+        height: 120px;
+    }
+    #game-1,
+    #game-2 {
+        width: 80%;
+        height: 80%;
+        transform: translate(13px, 12px);
+    }
+    #game-1 img,
+    #game-2 img {
+        transform: translate(8px, 10px);
+    }
+    .computer h1,
+    .player h1 {
+        font-size: 24px;
+    }
+    .player,
+    .computer {
+        height: 200px;
+        flex-basis: 50%;
+        position: relative;
+    }
+    .invisible {
+        width: 120px;
+        height: 120px;
+    }
+    .result-title {
+        flex-basis: 100%;
+    }
+    .player-status h1,
+    .computer-status h1 {
+        font-size: 16px;
+    }
+    .play-again {
+        font-size: 18px;
+        margin-top: 20px;
+        width: 70%;
+    }
+    #status {
+        font-size: 45px;
+    }
+    .effect-left::before {
+        height: 300px;
+        width: 300px;
+        transform: translate(-38%, -38%);
+    }
+    .effect-right::before {
+        height: 300px;
+        width: 300px;
+        transform: translate(-38%, -38%);
+    }
+    .rules {
+        grid-column: 5/9;
+        grid-row: 3;
+        font-size: 19px;
+        margin-top: 30px;
+    }
+    .rules-title {
+        font-size: 30px;
+    }
+    .attribution {
+        grid-column: 1/13;
+        font-size: 12px;
+        margin-top: 40px;
+    }
 }
 
 
