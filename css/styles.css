@@ -305,7 +305,7 @@ span {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0px;
     z-index: 3;
     pointer-events: none;
     opacity: 0;
@@ -506,6 +506,16 @@ span {
         height: 300px;
         width: 300px;
         transform: translate(-38%, -38%);
+    }
+    .rules-container {
+        background: #ffffff;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
     }
     .rules {
         grid-column: 5/9;
@@ -780,6 +790,17 @@ span {
         width: 300px;
         transform: translate(-38%, -38%);
     }
+    .rules-container {
+        background: #ffffff;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        border-radius: 0;
+    }
     .rules {
         grid-column: 5/9;
         grid-row: 3;
@@ -788,10 +809,20 @@ span {
     }
     .rules-title {
         font-size: 37px;
+        flex-basis: 33.99%;
     }
     .rules-img img {
         width: 80%;
+        align-self: center;
     }
+    .cross-btn {
+        order: 3;
+    }
+    .cross-btn img {
+        width: 20px;
+        height: 20px;
+    }
+   
     .attribution {
         grid-column: 1/13;
         font-size: 12px;
