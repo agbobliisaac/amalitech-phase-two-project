@@ -15,11 +15,6 @@ class RockPaperScissors {
         this.userChoice = undefined;
         this.computerChoice = undefined;
         this.winner = undefined;
-        this.pointMap = new Map([
-            ['paper', 0],
-            ['scissors', 1],
-            ['rock', 2],
-        ]);
         this.score = localStorage.getItem("score") ? Number(localStorage.getItem("score")) : 0;
         this.init();
     }
