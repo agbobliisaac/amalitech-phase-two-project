@@ -1,3 +1,21 @@
+# Amalitech Graduate Training Program - rock-paper-scissors
+
+
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+- [Author](#author)
+
+## Overview
+
+### The challenge
+
+
 ### Rules
 
 If the player wins, they gain 1 point. If the computer wins, the player loses one point.
@@ -8,17 +26,26 @@ If the player wins, they gain 1 point. If the computer wins, the player loses on
 - Rock beats Scissors
 - Scissors beats Paper
 
-#### Bonus
+### Screenshot
+![](design/bonus/desktop-step-1.jpg)
+![](design/bonus/desktop-step-2.jpg)
+![](design/bonus/desktop-step-3.jpg)
+![](design/bonus/desktop-step-4-lose.jpg)
+![](design/bonus/desktop-step-4-win.jpg)
 
-- Scissors beats Paper
-- Paper beats Rock
-- Rock beats Lizard
-- Lizard beats Spock
-- Spock beats Scissors
-- Scissors beats Lizard
-- Paper beats Spock
-- Rock beats Scissors
-- Lizard beats Paper
-- Spock beats Rock
 
-Not sure what Rock, Paper, Scissors, Lizard, Spock is? [Check out this clip from The Big Bang Theory](https://www.youtube.com/watch?v=iSHPVCBsnLw).
+
+### Links
+
+- Solution URL: [Github repo](github.com/agbobliisaac/amalitech-phase-two-project.git)
+- Live Site URL: [Live site](https://delicate-pothos-98b4c1.netlify.app/)
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Html-css vanilla
+- Flexbox and grid
+- Fluid responsive layout
+- Vanilla JavaScript
+
