@@ -46,9 +46,11 @@ class RockPaperScissors {
     }
 
     updateScore(value) {
-        this.score += value;
-        this.scoreLabel.innerHTML = this.score;
-        localStorage.setItem("score", `${this.score}`);
+        setTimeout(() => {
+            this.score += value;
+            this.scoreLabel.innerHTML = this.score;
+            localStorage.setItem("score", `${this.score}`);
+        }, 3700);
     }
 
     checkWinner() {
@@ -79,7 +81,7 @@ class RockPaperScissors {
         setTimeout(() => {
             this.load();
             this.showComputerChoice();
-        }, 3500);
+        }, 3100);
     }
 
     load() {
