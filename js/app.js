@@ -12,6 +12,9 @@ class RockPaperScissors {
         this.resultBox = document.querySelector('.result-title');
         this.hideComputerChoice = document.querySelector('.invisible');
         this.gameResult = document.getElementById('status');
+        this.ruleButton = document.querySelector('.rules');
+        this.closeButton = document.querySelector('.cross-btn');
+        this.ruleOverlay = document.querySelector('.rules-overlay');
         this.userChoice = undefined;
         this.computerChoice = undefined;
         this.winner = undefined;
@@ -32,13 +35,9 @@ class RockPaperScissors {
         this.resetBtn.addEventListener('click', () => this.reset());
         this.scoreLabel.innerText = this.score;
 
-        document.querySelector('.rules').addEventListener('click', () => {
-            document.querySelector('.rules-overlay').classList.add('active');
-        });
-
-        document.querySelector('.cross-btn').addEventListener('click', () => {
-            document.querySelector('.rules-overlay').classList.remove('active');
-        });
+       
+        this.fadeIn() ;
+        this.fadeOut();
     }
 
     computerGen() {
@@ -107,6 +106,16 @@ class RockPaperScissors {
         this.resultContainer.classList.remove('load');
         this.resultBox.classList.remove('active');
         this.hideComputerChoice.classList.remove('active');
+    }
+    fadeIn() {
+        this.ruleButton.addEventListener('click', () => {
+            this.ruleOverlay.classList.add('active');
+        });
+    }
+    fadeOut() {
+        this.closeButton.addEventListener('click', () => {
+            this.ruleOverlay.classList.remove('active');
+        });
     }
 }
 
