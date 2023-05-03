@@ -12,8 +12,8 @@ class RockPaperScissors {
         this.resultBox = document.querySelector('.result-title');
         this.hideComputerChoice = document.querySelector('.invisible');
         this.gameResult = document.getElementById('status');
-        this.ruleButton = document.querySelector('.rules');
-        this.closeButton = document.querySelector('.cross-btn');
+        this.ruleBtn = document.querySelector('.rules');
+        this.closeBtn = document.querySelector('.cross-btn');
         this.ruleOverlay = document.querySelector('.rules-overlay');
         this.userChoice = undefined;
         this.computerChoice = undefined;
@@ -108,12 +108,12 @@ class RockPaperScissors {
         this.hideComputerChoice.classList.remove('active');
     }
     fadeIn() {
-        this.ruleButton.addEventListener('click', () => {
+        this.ruleBtn.addEventListener('click', () => {
             this.ruleOverlay.classList.add('active');
         });
     }
     fadeOut() {
-        this.closeButton.addEventListener('click', () => {
+        this.closeBtn.addEventListener('click', () => {
             this.ruleOverlay.classList.remove('active');
         });
     }
