@@ -14,7 +14,7 @@
 ## Overview
 
 ### The challenge
-
+ The challenge is to implement rock-paper-scissors Game
 
 ### Rules
 

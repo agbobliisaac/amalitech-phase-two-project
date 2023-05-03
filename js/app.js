@@ -63,7 +63,7 @@ class RockPaperScissors {
         } else {
             this.gameResult.innerText = "you lose";
             this.winner = this.computerChoice;
-            this.updateScore(0);
+            this.updateScore(-1);
         }
     }
 
