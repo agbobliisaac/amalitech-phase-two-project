@@ -24,7 +24,23 @@ class RockPaperScissors {
     this.init();
   }
 
-  
+  init() {
+    this.buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        this.userChoice = button.id;
+        this.computerChoice = this.computerGen();
+        this.checkWinner();
+        this.displayResult();
+      });
+    });
+
+    this.resetBtn.addEventListener("click", () => this.reset());
+    this.scoreLabel.innerText = this.score;
+
+    this.fadeIn();
+    this.fadeOut();
+  }
+
   computerGen() {
     const choices = ["paper", "scissors", "rock"].filter(
       (choice) => choice !== this.userChoice
@@ -106,24 +122,6 @@ class RockPaperScissors {
       this.ruleOverlay.classList.remove("active");
     });
   }
-
-  init() {
-    this.buttons.forEach((button) => {
-      button.addEventListener("click", () => {
-        this.userChoice = button.id;
-        this.computerChoice = this.computerGen();
-        this.checkWinner();
-        this.displayResult();
-      });
-    });
-
-    this.resetBtn.addEventListener("click", () => this.reset());
-    this.scoreLabel.innerText = this.score;
-
-    this.fadeIn();
-    this.fadeOut();
-  }
-
 }
 
 // Instantiate the RockPaperScissors game on DOMContentLoaded
